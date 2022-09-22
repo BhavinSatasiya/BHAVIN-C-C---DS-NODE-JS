@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int i,j,a[5][5],b[5][5],c[5][5];
+	clrscr();
+	printf("First Matrix is\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("a[%d][%d]=",i,j);
+			scanf("%d",&a[i][j]);
+		}
+	}
+	printf("Second Matrix is\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("b[%d][%d]=",i,j);
+			scanf("%d",&b[i][j]);
+		}
+	}
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];
+		}
+	}
+		printf("\n\ta\t\t\tb\t\t\tc=a+b\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			printf("%d\t",a[i][j]);
+		}
+		for(j=0;j<3;j++)
+		{
+			printf("%d\t",b[i][j]);
+		}
+		for(j=0;j<3;j++)
+		{
+			printf("%d\t",c[i][j]);
+		}
+		printf("\n");
+	}
+	getch();
+}

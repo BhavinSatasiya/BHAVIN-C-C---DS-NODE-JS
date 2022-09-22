@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int i,j,a=65;
+	clrscr();
+	i=1;
+	do
+	{
+		j=1;
+		do
+		{
+			if(i%2!=0)
+			{
+				printf("%c\t",a);
+				a++;
+			}
+			else
+			{
+				printf("%c\t",a+32);
+				a++;
+			}
+			j++;
+		}
+		while(j<=i);
+		printf("\n");
+		i++;
+	}
+	while(i<=5);
+	getch();
+}

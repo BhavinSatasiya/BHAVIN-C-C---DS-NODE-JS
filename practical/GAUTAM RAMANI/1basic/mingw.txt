@@ -1,0 +1,11 @@
+************************************************************************
+mingw install (download)
+apply changes-->select mingw 32 compiler all(as you shown)...
+
+path set:- open environment varaibles->C:\MinGW\bin (add this path in both (path,Path) in (user and system) ok..ok..apply changes....
+type in cmd:-
+    filename.c   filename
+gcc HELLOW.c -o HELLOW
+HELLOW
+
+*****************************

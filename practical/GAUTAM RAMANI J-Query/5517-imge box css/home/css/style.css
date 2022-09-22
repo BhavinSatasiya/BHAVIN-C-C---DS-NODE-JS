@@ -1,0 +1,30 @@
+
+body{
+    margin: 20px;
+    font-size: 20px;
+}
+.box{
+    height: 500px;
+    width: 1000px;
+    background-image:url(../images/tree.jpg) ;
+    position: relative;
+    align-items: center;
+    top: auto;
+    left: 150px;
+
+}
+.sub-box{
+    height: 200px;
+    width: 500px;
+    background-color: transparent;
+    color:rgb(238, 247, 187);
+    position: absolute;
+    top: 50px;
+    left: 200px;  
+    text-align: center;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 50px;
+    text-shadow: 2px 2px 1px grey;
+  
+}    
