@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const { router } = require("express");
 const bodyParser =require("body-parser") 
-const authjwt = require("./helpers/jwt")
+// const authjwt = require("./helpers/jwt")
 
 //middleware
 app.use(cors());
@@ -14,7 +14,7 @@ app.use("*",cors())
 
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
-app.use(authjwt())
+// app.use(authjwt())
 
 // app.use(express.json())
 
@@ -22,11 +22,11 @@ app.use(authjwt())
 const categoriesRoutes = require("./routes/categories");
 const productsRoutes = require("./routes/products");
 const usersRoutes = require("./routes/users")
+const ordersRouts = require("./routes/orders")
 app.use('/products',productsRoutes);
 app.use('/categories',categoriesRoutes);
 app.use('/users',usersRoutes);
-
-
+app.use('/orders',ordersRouts);
 
 
 mongoose.connect(process.env.CONNECTION_URL)
