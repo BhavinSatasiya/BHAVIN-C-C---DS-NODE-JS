@@ -1,0 +1,1115 @@
+Node js:-
+        Node js is a Javascript runtime built on crome v8 Javascript engine.
+        provide runtime environment
+        Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
+
+        Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent.
+
+        Node.js = Runtime Environment + JavaScript Library
+
+        server:-
+                A server is a computer program or a device that provides a service to another computer program and its user, also known as the client.
+
+*******************************************************HTTP Serevr*****************************************************
+
+http server:-
+
+            -http is the predefined module
+            -http module used to create the http server
+            -no need to download http module by using either "npm" tool or "yarn" tool
+            -http module is inbuilt module in NodeJS
+
+            -require() is the predefined function, used to import the modules
+
+            extra:-
+
+            http module:- Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP). To include the HTTP module, use the require () method: The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+            require:- Node.js follows the CommonJS module system, and the builtin require function is the easiest way to include modules that exist in separate files. The basic functionality of require is that it reads a JavaScript file, executes the file, and then proceeds to return the exports object. An example module: So if you run var example = require ...
+
+
+*******************************************************File System*****************************************************
+
+File System:-
+            The file system in node.js enables a simple API with which we can work with files. We can work with file systems in both ways Synchronously and Asynchronously.
+            
+                1) Read
+
+                2) Write
+
+                3) Append
+
+                4) Close
+
+                5) Delete
+
+                Read
+                ****
+
+                1) readFile(-,-)
+
+                2) readFileSync(-)
+
+
+                open
+                ****
+
+                1) open()
+
+                2) openSync()
+
+
+                Write
+                *****
+
+                1) writeFile()
+
+                2) writeFileSync()
+
+
+                Append
+                ******
+
+                1) appendFile()
+
+                2) appendFileSync()
+
+
+
+                close
+                *****
+                1) close(-,-)
+
+                2) closeSync(-)
+
+
+
+                Delete
+                ******
+                1) unlink(-,-)
+
+                2) unlinkSync()
+
+ex:-                        
+
+
+*******************************************************Sync*****************************************************
+
+const fs=require('fs')
+
+               *********Sync open->write->read->add text->rename->close->delete*************
+
+console.log('start')
+
+fs.writeFileSync('demo.txt','All glory comes from daring to begin')    //file write       
+    
+result=fs.readFileSync('demo.txt')                                     //file read
+console.log(result.toString());
+
+fs.openSync("demo.txt", "r+");                                         //file open
+
+
+fs.appendFileSync("demo.txt", "\ndata appended synchronously");        //add something in exist file
+
+fs.renameSync("demo.txt", "new.txt", renamingCompleted);               //file rename
+function renamingCompleted(error) {
+      if (error) {
+            console.log(error);
+          } else {
+                console.log("File Renamed...");
+              }
+            }
+console.log('end') 
+
+
+*******************************************************ASync*****************************************************
+
+console.log('start')
+
+fs.open("demo.txt", "r+", (err, fd) => {                                             //file open
+  if (err) console.log(err);
+  else {
+    console.log("file opened successfully !!!");
+  }
+});
+
+fs.writeFile('demo.txt','All glory comes from daring to begin',(err)=>{              //file write  
+    if(err) throw err;
+    else {
+        console.log('writing asynchronously')
+    }
+});
+
+fs.readFile('demo.txt',(err,data)=>{                                                 //file read
+    if(err) 
+    console.log(err);
+    else console.log(data.toString());
+})
+
+
+console.log('end')
+
+fs.appendFile("demo.txt", "\n this is new line", (err) => {                           //add something(exist file)
+  if (err) throw err;
+  else console.log("data appended asynchronously");
+});
+
+fs.rename("demo.txt", "new.txt", renamingCompleted);                                   //file rename
+function renamingCompleted(err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("File Renamed...");
+  }
+}
+
+fs.open("demo.txt", "r+", (err, fd) => {                                                 //file closed
+  if (err) console.log(err);
+  else {
+    fs.close(fd, (err) => {
+      if (err) throw err;
+      else {
+        console.log("file closed successfully");
+      }
+    });
+  }
+});
+
+fs.unlink("demo.txt", (err) => {                                                        //file delete
+  if (err) throw err;
+  else {
+    console.log("file deleted successfully !!!");
+  }
+});
+
+
+*****************************************************JSON*******************************************************
+
+JSON:-
+
+    json stands for JavaScript Object Notation
+
+    The JSON object contains methods for parsing JavaScript Object Notation (JSON) and converting values to JSON.
+    It can't be called or constructed, and aside from its two method properties, it has no interesting functionality of its own.
+
+    JavaScript and JSON differences:-
+
+    JSON is a syntax for serializing objects, arrays, numbers, strings, booleans, and null. It is based upon JavaScript syntax but is distinct from it: some JavaScript is not JSON.
+
+    advantages:-
+
+        Provide support for all browsers
+        Easy to read and write
+        Straightforward syntax
+        You can natively parse in JavaScript using eval() function
+        Easy to create and manipulate
+        Supported by all major JavaScript frameworks
+        Supported by most backend technologies
+        JSON is recognized natively by JavaScript
+        It allows you to transmit and serialize structured data using a network connection.
+        You can use it with modern programming languages.
+        JSON is text which can be converted to any object of JavaScript into JSON and send this JSON to the server.
+
+
+*****************************************************Express*******************************************************
+
+Diffrence between node and Express:-
+
+    node:-
+        node is an open-source , cross plateform runtime environment that aloows developers to create all kind of server-side tolls and applications in javascript.
+
+    Express:-
+        Express is the most popular Node Web Framework and is the underlying library for a number of other popular Node WebFrame works.
+
+*****************************************************Streams in Node js********************************************************
+
+What are Streams?
+Streams are objects that let you read data from a source or write data to a destination in continuous fashion. In Node.js, there are four 
+
+Types of streams:-
+
+                  Readable − Stream which is used for read operation.
+
+                  Writable − Stream which is used for write operation.
+
+                  Duplex − Stream which can be used for both read and write operation.
+
+                  Transform − A type of duplex stream where the output is computed based on input.
+
+*****************************************************MongoDB*******************************************************
+
+Database:-
+
+    A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.
+
+MongoDB:-
+        MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. 
+
+Differences between MongoDB and MySQL:
+ 
+MongoDB is a document-based non-relational database management system. It’s also called an object-based system. It was designed to supplant the MySQL structure as an easier way to work with data. 
+
+On the other hand, MySQL is a table-based system (or open-source relational database). The table-based design is the data query structure for search and is considered an SQL database. Also, data is searchable and accessible in relation to another data point or set.
+
+MongoDB --> nosql , document ,non relational dbms
+        -->cassandra,hbase
+sql -> RDMS relational database management system
+
+MongoDB Structure:
+------------------
+-> MongoDB Physical database contains several logical databases.
+-> Each database contains several collections. Collection is something
+    like table in relational database.
+-> Each collection contains several documents. Document is something
+like record/row in relational database.
+
+
+SQL Terms 		MongoDB Terms
+-----------------------------------------------------------------------
+Database 		  Database
+Table 			  Collection
+Entity/Row 		Document
+Column 			  Key / Field
+Table Join 		Embedded Documents
+Primary Key 	Primary Key (Default key _id provided by mongodb itself)
+
+Key Characteristics of MongoDB database:
+----------------------------------------
+1. Installation and setup is very easy.
+2. All information related to a document will be stored in a single place.
+ To retrieve data, it is not required to perform join operations and
+hence retrieval is very fast.
+3. Documents are independent of each other and no schema. Hence
+we can store unstructured data like videos, audio files etc
+4. We can perform oprations like editing existing document, deleting
+document and inserting new documents very easily.
+5. Retrieval data is in the form of json which can be understandable by
+any programming language without any conversion (interoperability)
+6. We can store very huge amount of data and hence scalability is
+more
+
+MongoDB Shell vs MongoDB Server:
+--------------------------------
+Once we installed MongoDB, we will get MongoDB Shell and MongoDB
+Server . These are Javascript based applications.
+
+MongoDB Server is responsible to store our data in database. --> mongod
+MongoDB Shell is responsible to manage Server.               --> mongo   
+
+
+mongod --dbpath "C:\data\db"
+
+
+Default Databases:
+------------------
+MongoDB Admin will use these default databases.
+> show dbs
+admin 0.000GB
+config 0.000GB
+local 0.000GB
+1. admin:
+---------
+admin database is used to store user authentication and authorization
+information like usernames,passwords,roles etc
+This database is used by administrators while creating,deleting and
+updating users and while assigning roles.
+
+2. config:
+----------
+To store configuration information of mongodb server.
+
+3. local:
+---------
+local database can be used by admin while performing replication
+process.
+
+db.version()
+db.help()
+db.showdbs
+use admin()
+
+********************************************
+create collection:-
+open cmd type:- mongod
+another cmd open type:-mongo
+
+use newskill
+db.createCollection("test")
+db.test.insertOne({
+    "posts": [
+      { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  })
+
+  db.test.find()
+  db.test.find().pretty()
+
+************************************
+insert:-
+        The insert (the method from older versions) takes a single document by default, and there is an option to insert multiple documents supplied as an array.
+
+insertOne:-                  
+            With insertOne you can insert one document into the collection. 
+
+insertMany:-
+          With insertOne you can insert one document into the collection. 
+          insertMany accepts an array of documents and these are inserted. 
+
+*************************************
+use newskill
+db.createCollection("service")
+db.service.insertOne(
+  {
+    "orderno": [
+    {
+        "id":"1",
+        "ordernum":"#4464"
+    }
+    ],
+    "restaurant":[
+      {
+        "id":"1",
+        "restaurantname":"Mcdonalds",
+        "restaurantadd":"1097 silver hub jakatnaka surat 36655",
+        "rating":"4.5 Out of 5"
+      }
+    ],
+    "item":[
+      {
+        "id":"1",
+        "item1":"Coffee",
+        "qty":"2"
+      },
+      {
+        "item2":"Mcsaver",
+        "qty":"1"
+      }
+    ],
+    "customer":[
+      {
+        "id":"1",
+        "firstname":"John",
+        "lastname":"Nhoj"
+    },
+    {
+      "address1":"2001",
+      "address2":"River view",
+      "state":"Gujarat",
+      "city":"Surat",
+      "Pincode":"395006"
+    }
+  ],
+  "contactdetail":[
+    {
+      "id":"1",
+      "number":"4473467913",
+      "Email":"abc@abc.com",
+      "newsletter":true
+    }
+  ],
+  "paymentopt":[
+    {
+      "id":"1",
+      "paymentopt":"cash on delvery"
+    }
+  ],
+  "deilvery":[
+    {
+      "id":"1",
+      "deliveryboy":"Ramukaka",
+      "boynum":"446445864",
+      "rating":"4 Out of 5"
+    }
+  ],
+  "orderconfirmed":[
+    {
+      "orderconfirmed":true
+    }
+  ]
+})
+db.service.find()
+db.service.find().pretty()
+
+*****************************************************
+task:-make a data based on service(minimum five) and also particular service have minimum five data
+
+use newskill 
+createCollection("services")
+db.services.insertMany(
+  [
+    {
+      service-1
+      data
+    },
+    {
+      service-2
+      data
+    },
+    {
+      service-3
+      data
+    },
+    {
+      service-4
+      data
+    },
+    {
+      service-5
+      data
+    }
+  ]
+)
+db.services.find().pretty()
+
+*****************************************
+
+skip():-
+Sometimes it is required to return a certain number of results after a certain number of documents. The skip() can do this job.
+
+limit():-
+The limit() function in MongoDB is used to specify the maximum number of results to be returned. Only one parameter is required for this function.to return the number of the desired result.
+
+count:-The count() function returns the number of documents in a specified collection.
+
+sort:- sort({"":1}) ---make in Assending order
+       sort({"":-1})  ---make in desending order
+
+***********************************************
+
+task:-make a 9 data(ex.) 
+      a.show only 4,5 and 6 number data
+      b.show 2nd number data only
+      b.show 2nd last number data only
+
+use task1
+db.createCollection("task1")
+db.task1.insertOne({sno:101,sname:"Ram",fees:37500,course:"Node"})
+db.task1.insertOne({sno:102,sname:"Raj",fees:45000,course:"FullStack"})
+db.task1.insertOne({sno:103,sname:"a",fees:65000,course:"Django"})
+db.task1.insertOne({sno:104,sname:"b",fees:45000,course:"Node"})
+db.task1.insertOne({sno:105,sname:"c",fees:65000,course:"Flutter"})
+db.task1.insertOne({sno:106,sname:"d",fees:25000,course:"Python"})
+db.task1.insertOne({sno:107,sname:"d",fees:25000,course:"C++"})
+db.task1.insertOne({sno:108,sname:"d",fees:25000,course:"C"})
+db.task1.insertOne({sno:109,sname:"d",fees:25000,course:"Data Structure"})
+db.task1.find().pretty()           
+db.task1.find().skip(3).limit(3)        //a                 
+db.task1.find().skip(1).limit(1)        //b        
+db.task1.find().skip(7).limit(1)        //c       
+
+*******************Embedded data(nested form)**********************
+source:- Json placeholder/user
+
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  }
+]
+
+
+https://www.mongodb.com/try/download/database-tools
+downolad above tool, open it go for mongodb database->bin->mongoimport.exe(copy) 
+paste go for Program Files->MongoDb->Server->5.0->bin->(paste)
+
+**********************Steps for js File Import in MongoDB********************
+->Make a js file(vs code)
+->open cmd type mongod,open cmd where js file is locate type mongo
+->show dbs->open folder(make collection before load the file)  where you want to load the file
+->load("filename.js")->true
+->db.filename.find()
+
+********************Steps for Json File Import in MongoDB*************
+->Make a json file(vs code)
+->open cmd type mongod,open cmd where json file is locate  type mongoimport --db databaseName --collection collectionName --file fileName --jsonArray
+->type mongo
+
+example:-mongoimport --db book --collection taskbook --file book.json --jsonArray
+show dbs->use book->db.taskbook.find().pretty()
+
+*******************************
+
+drop():-drop() method is used to drop a collection from a database.
+dropDatabase():-Removes the current database, deleting the associated data files.
+
+ex:-
+
+use datastructure
+db.createCollection("topics")
+db.topics.insertOne({"t1":"shorting","t2":"linklist","t3":"tree"})
+db.topics.drop()
+db.dropDatabase()
+
+ObjectId:
+For every document, MongoDB Server will associate a unique id, which
+is nothing but ObjectId.
+db.collection.find()[0]._id
+
+1. Comparison Query Operators:
+$eq:-equal, $ne:-not equal, $gt:-greter than, $gte:-greter than equal, $lt:-less than, $lte:-less than equal, $in:-in, $nin:-not in
+
+ex:
+note:-json object already imported into database
+show dbs
+use taskbook
+show collections
+db.taskbook.find().pretty()
+db.taskbook.find({ no_of_reviews: { $eq: 3}}).pretty()           
+              or
+db.taskbook.find({ no_of_reviews: 3}).pretty()
+
+db.taskbook.find({"author.profile.courses": {$eq: 2}}).pretty()
+                    or
+db.taskbook.find({"author.profile.courses": 2}).pretty()
+
+db.taskbook.find({tags: {$eq: "database"}}).pretty()
+                    or
+db.taskbook.find({tags: "database"}).pretty()
+
+db.taskbook.find({tags: {$eq:["language","freeware","programming"]}}).pretty()
+                    or
+db.taskbook.find({tags: ["language","freeware","programming"]}).pretty()
+
+db.taskbook.find({no_of_reviews: {$ne: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$gt: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$gte: 3}}).pretty()
+
+db.taskbook.find({taskno_of_reviews: {$lt: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$lte: 3}}).pretty()
+
+db.taskbook.find({no_of_reviews: {$in: [1,4,5]}}).pretty()
+
+db.taskbook.find()[6].languages
+
+db.taskbook.find()[6].languages[1]
+
+db.taskbook.find()[6].author.profile.courses
+
+2.Logical Query Operators:
+------------------------
+$or, $nor, $and, $not
+
+			    or	nor	and	nand 
+	0	0	    0	  1	  0	  1	  
+	0	1	    1	  0	  0	  1
+	1	0	    1	  0	  0	  1
+	1	1	    1	  0	  1	  0
+  not:- 0->1
+        1->0
+
+$or operator:
+
+  Syntax: {$or: [{expression1},{expression1},..{expressionN}]}
+  db.books.find({$or: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty()
+  db.books.find({$or: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty().count()
+  o/p=4
+  db.books.find({$or: [{no_of_reviews: {$lt: 3}}, {downloadable: true},{"author.profile.books": {$gte: 2}}]}).pretty()
+
+$nor operator:It is inverse of $or operator:
+
+  Syntax: {$nor: [{expression1},{expression1},..{expressionN}]}
+  db.taskbook.find({$nor: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty()
+  db.taskbook.find({$nor: [{no_of_reviews: {$gt: 3}}, {tags: "programming"}]}).pretty().count()
+  o/p=3
+
+$and operator:
+
+  db.taskbook.find({$and:[{"downloadable":true},{"author.profile.books":2}]}).pretty()
+  db.taskbook.find({$and:[{"downloadable":true},{"author.profile.books":2}]}).pretty().count()
+
+nand operator:
+
+  db.taskbook.find({$or:[{"downloadable":{$ne:true}},{"author.profile.books":{$ne:2}}]}).pretty().count()
+
+not operator:
+
+  db.taskbook.find({"isbn":{$not:{$eq:9988}}}).pretty()
+  db.taskbook.find({"isbn":{$not:{$eq:9988}}}).pretty().count()
+
+update(),updateOne(),save():-MongoDB's update() and save() methods are used to update document into a collection.
+db.taskbook.update({"isbn":9988},{$set:{"author.callname":"Ramcharit"}})
+
+updateMany():-The updateMany() method updates all the documents that matches the given filter.
+db.taskbook.updateMany({"downloadable":true},{$set:{"downloadable":"yes"}})
+
+remove(),deleteOne():-MongoDB's remove() method is used to remove a document from the collection. remove() method accepts two parameters. One is deletion criteria and second is justOne flag.
+db.taskbook.remove({"isbn":9988})
+db.taskbook.remove({})     //whole order's will delete
+db.taskbook.remove({"isbn":6677})    //4 record will delete
+db.taskbook.deleteMany({"isbn":6677})  //4 record will delete
+
+MongoDB Shell:- MongoDB have a JavaScript shell that allows interaction with MongoDB instance from the command line. you can create a document as well as  table, you should name the table and define its column and each column's data type. 
+
+MongoDB Compass:- MongoDB Compass is a powerful GUI for querying, aggregating, and analyzing your MongoDB data in a visual environment. Compass is free to use and source available, and can be run on macOS, Windows, and Linux.(GUI:Graphical user interface)
+
+MongoDB Atlas:- MongoDB Atlas is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.
+
+->it also connect with MongoDB Shell, application, and MongoDB Compass.
+
+gk:-
+
+CRUD operations:-Create-Read-Update-Delete
+
+WEB Api vs Application:-
+ 
+Web API is back-end application(server side) where actual functionality to call service/database call is happening to store and retrieve the data.
+
+Web Application is front end application(client side)which is calling web API to present the data retrieved from back-end.
+
+eg: To check the account balance in your mobile banking app, you are able to see your account details in front end. But all the calculations of interest /balance is happening in the back end.
+
+**********************************************Mongoose*****************************************************
+
+Mongoose:-
+          Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+
+make folder 
+open cmd type npm init -y where folder is locate
+npm install mongoose
+
+mongoose.connect ():-
+                    The mongoose.connect () function is the easiest way to connect to MongoDB using Mongoose. Once you've connected, you can then create a Mongoose model and start interacting with MongoDB.
+
+mongoose.model ():-
+                  When you use mongoose.model (), your model will use the default mongoose connection. If you create a custom connection, use that connection's model () function instead.
+
+                  Models are responsible for all document interactions like creating, reading, updating, and deleting (CRUD).
+
+********************************************Express Get,Post,Put,Patch,Delete*******************************************************************
+
+        Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+What is Routing?
+                Routing defines the way in which the client requests are handled by the application endpoints.
+  
+Implementation of routing in Node.js: There are two ways to implement routing in node.js which are listed below:
+
+1)By Using Framework
+2)Without using Framework
+
+1)By Using Framework:-
+                    Using Framework: Node has many frameworks to help you to get your server up and running. The most popular is Express.js.
+                    Routing with Express in Node: Express.js has an “app” object corresponding to HTTP. We define the routes by using the methods of this “app” object. This app object specifies a callback function, which is called when a request is received. We have different methods in app object for a different type of request.
+
+                    The next() is used to hand off the control to the next callback. Sometimes we use app.use() to specify the middleware function as the callback.
+
+            So, to perform routing with the Express.js you have only to load the express and then use the app object to handle the callbacks according to the requirement.
+
+2)Routing without Framework:-
+                         Using the frameworks is good to save time, but sometimes this may not suit the situation. So, a developer may need to build up their own server without other dependencies.
+
+
+********************************************************GET-POST-PUT-PATCH-DELETE (JS Fetch API Method)********************************************
+
+Get Method:-
+    The GET method is used to retrieve data from the server.This is a read-only method
+
+Post method:-
+    The POST method send data to the server and creates a new resource.This method is used to create a new data entry.
+
+PUT Method:-
+    The PUT method is most often used to update an existing resource.(when a client needs to replace an existing resource entirely)
+
+PATCH Method:-
+    The PATCH method is very similar to the PUT method because it also modifies an existing resource. The diffrence is that for the PUT method,the request body contains the complete new version, whereas for the PATCH method, the request body only need to contain the specific changes to the resources, specifically a set of instructions describing how that resource should be changed, and the API service will create a new version according to that instruction.(when a client needs to replace an existing resource Partial)
+
+DELETE Method:-
+    The DELETE request simply looks like this, for deleting a specific resource.
+
+
+
+Folder Structure Restapi(IQ):-
+
+-package-loc.json
+-package.json
+-nodemodules
+-Server.js
+-Db
+-Model
+-LoginModule
+-Token
+-Middleware
+-Routes
+-Controller
+
+*************************************************************************************************************************
+
+                                                            My SQL
+
+
+
+MongoDB:-
+        MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc.
+
+                                                SQL vs MYSQL
+
+Parameter	                      SQL	                                                MYSQL
+
+
+Definition	    SQL is a Structured Query Language.                 MySQL is an RDBMS tostore, retrieve, modify and administrate a database 
+                It is useful to manage relational databases.        usingSQL.       
+                	
+
+Type	        SQL is a query language.	                        MySQL is database software. It used “SQL” language to query the database.
+
+Support 	    sql server Management studio              	        MySQL offers an integrated tool called ‘MySQL workbench’ to design and develop 
+for connector                                                       databases.
+
+Purpose	        To query and operate database system.	            Allows data handling, storing, modifying, deleting in a tabular format.
+
+Usage	        SQL code and commands are used in various           MYSQL is used as an RDBMS database.
+                DBMS and RDBMS systems including MYSQL.	
+
+Advantages of SQL:-
+                    -Efficient data retrieval
+                    -Easy learning curve
+                    -Standardized language
+                    -Platform compatible
+
+Advantages of NoSQL:-
+                    -Fast query processing
+                    -Easy mapping
+                    -Flexible schemas 
+                    -Horizontal scaling
+                    
+
+Database:-
+            A database is a collection of inter-related data,or collection of Structured information.
+
+DBMS (Database Management System) :-
+
+    A database is a collection of inter-related data which helps in the efficient retrieval, insertion, and deletion of data from the database and organizes the data in the form of tables, views, schemas, reports, etc. 
+    
+    For Example, a university database organizes the data about students, faculty, admin staff, etc. which helps in the efficient retrieval, insertion, and deletion of data from it.
+
+    DDL:-
+        DDL is the short name for Data Definition Language, which deals with database schemas and descriptions, of how the data should reside in the database.
+
+            CREATE: to create a database and its objects like (table, index, views, store procedure, function, and triggers)
+            ALTER: alters the structure of the existing database
+            DROP: delete objects from the database
+            TRUNCATE: remove all records from a table, including all spaces allocated for the records are removed
+            COMMENT: add comments to the data dictionary
+            RENAME: rename an object
+
+    DML:-
+        DML is the short name for Data Manipulation Language which deals with data manipulation and includes most common SQL statements such SELECT, INSERT, UPDATE, DELETE, etc., and it is used to store, modify, retrieve, delete and update data in a database.
+
+            SELECT: retrieve data from a database
+            INSERT: insert data into a table
+            UPDATE: updates existing data within a table
+            DELETE: Delete all records from a database table
+            MERGE: UPSERT operation (insert or update)
+            CALL: call a PL/SQL or Java subprogram
+            EXPLAIN PLAN: interpretation of the data access path
+            LOCK TABLE: concurrency Control
+
+Database Management System: 
+    The software which is used to manage databases is called Database Management System (DBMS). For Example, MySQL, Oracle, etc. are popular commercial DBMS used in different applications. DBMS allows users the following tasks: 
+
+        Data Definition: It helps in the creation, modification, and removal of definitions that define the organization of data in the database. 
+        Data Updation: It helps in the insertion, modification, and deletion of the actual data in the database. 
+        Data Retrieval: It helps in the retrieval of data from the database which can be used by applications for various purposes. 
+        User Administration: It helps in registering and monitoring users, enforcing data security, monitoring performance, maintaining data integrity, dealing with concurrency control, and recovering information corrupted by unexpected failure.
+
+
+MySQL Data Types:-
+  1)String Data Types
+    a)CHAR(size)
+    b)VARCHAR(size)
+    c)VARBINARY(size)
+  2)Numeric Data Type
+    a)INT(size)
+    b)FLOAT(size, d)
+    c)FLOAT(p)
+    d)DOUBLE(size, d)
+    e)BIGINT(size)
+  3)Date and Time Data Types
+    a)DATE
+    b)DATETIME(fsp)
+    c)TIME(fsp)
+    d)YEAR
+
+
+                                                Querys(Syntex):-
+                              (insert,update,delete,truncate,droptable,dropdatabase,renamedtable)
+
+[
+  ex:-
+        create database university;
+        use university;
+        create table student(
+            srno int,
+            rollno int,
+            sname varchar(10),
+            saddress varchar(20)
+        );
+
+        insert into student values(1,21,'Yaman','Punagam Surat');
+        insert into student values(2,22,'Gautam','Pasodara Surat');
+        insert into student values(3,23,'Parimal','Swaminarayan Surat');
+        insert into student values(4,24,'Khushi','Shayamnagar Surat');
+        insert into student values(5,25,'Bhavin','Swaminarayan Surat');
+        insert into student values(6,26,'Veer','Gokuldham Surat');
+        insert into student values(7,27,'Kashil','Citylight Surat');
+        insert into student values(8,28,'Ansh','Dangigev Surat');
+        insert into student values(9,29,'Riyan','Yogichowk Surat');
+        insert into student values(10,30,'Parag','Kargilchowk Surat');
+
+        select *from student;
+
+        select *from student where rollno=23;
+
+        select *from student order by rollno asc;
+        select *from student order by rollno desc;
+
+        delete from student where rollno=30;
+
+        drop table student;   
+
+        drop database university;
+
+        truncate table student;
+
+        SET SQL_SAFE_UPDATES = 0;
+        update university.student set saddress = 'Om-Pasodara' where sname = 'Gautam';
+
+        select * from student where sname = 'Yaman' and saddress='Punagam Surat';
+
+ex:-
+        use client;
+
+        create table PRODUCT_MASTER(
+            ProductNo varchar(20),
+            Description varchar(20),
+            Profit_Percent float,
+            Unit_Measure varchar(10),
+            QtyOnHand int,
+            RecordLvl int,
+            SellPrice int,
+            CostPrice int
+        );
+
+        insert into PRODUCT_MASTER values
+        ('P00001','T-Shirts',5,'Piece',200,50,350,250),
+        ('P0345','Shirts',6,'Piece',150,50,500,350),
+        ('P06734','Cotton Jeans',5,'Piece',100,20,600,450),
+        ('P07865','Jeans',5,'Piece',100,20,750,500),
+        ('P07868','Trousers',2,'Piece',150,50,850,550),
+        ('P07885','Pull Overs',2.5,'Piece',80,30,700,450),
+        ('P07965','Denim Shirts',4,'Piece',100,40,350,250),
+        ('P07975','Lycra Tops',5,'Piece',70,30,300,175),
+        ('P08865','Skirts',5,'Piece',75,30,450,300);
+
+        select * from Product_master;
+
+        -- products available from Product Master
+        select Description
+        from product_master;
+
+        -- change CostPrice of Trousers to 950
+        SET SQL_SAFE_UPDATES = 0;
+        update client.product_master set CostPrice = 950 where ProductNo = 'P07868';
+
+
+        -- delete record whose Qty onhand is equal to Rs.100
+        DELETE FROM product_master WHERE QtyOnHand=100;
+
+ex:-
+        use client;
+        create table SALE_MASTER(
+            SalesmanNo varchar(10),
+            SName varchar(20),
+            Address1 varchar(20),
+            Address2 varchar(20),
+            City varchar (20),
+            PinCode int,
+            State Varchar(20),
+            SalAmt int,
+            TgtAmt int,
+            YtdSales int,
+            Remarks varchar(20)
+        );
+
+        drop table SALE_MASTER;
+
+        insert into SALE_MASTER values 
+        ('S00001','Aman','A/14','Worli','Mumbai',400002,'Maharashtra',3000,100,50,'Good'),
+        ('S00002','Omkar','65','Nariman','Mumbai',400001,'Maharashtra',3000,200,100,'Good'),
+        ('S00003','Raj','P-7','Bandra','Mumbai',400032,'Maharashtra',3000,200,100,'Good'),
+        ('S00004','Ashish','A/5','Juhu','Mumbai',400044,'Maharashtra',3500,200,150,'Good');
+
+        select *from SALE_MASTER; 
+
+        -- salery equal to 3000 
+        select SName
+        from SALE_MASTER
+        where SalAmt=3000;
+
+        -- change city of salesman to Pune
+        SET SQL_SAFE_UPDATES = 0;
+        update client.sale_master set City = 'Pune';
+
+        -- delete record whose salAmt is eqal to Rs.3500
+        DELETE FROM sale_master WHERE SalAmt=3500;
+
+        -- renaming a tablename
+        ALTER TABLE sale_master RENAME TO renamedtable;
+
+]
+
+****************************************************************************************************************
+  Primary Key:-
+
+                Primary key is a column or a set of column that uniquely identifies a row it main purpose is the record uniqueness
+
+                for one unique column=Primary Key
+                for multiple column combination = Composite key
+
+                Features:-
+                    -Primary key not allow duplicate values and null values
+                    -Primary key is not compulsory but it is recommended
+                    -Primary Key helps to identify one record from another record and also helps in relating tables with one another
+                    -Primary key can be long or long raw data Type
+                    -Only one primary key allow per table
+                    -unique index is created automatically if there is a primary key
+                    -one table can continue upto 16 column in a composite key
+
+        Foreign Key:-
+
+            A foreign key is a set of attributes in a table that refers to the primary key of another table. The foreign key links these two tables.
+
+            --here if we try to delete the parent table record(without delete child table record) it cant delete...
+            --first delete child table record after delete parent table record 
+
+****************************************************************************************************************
+
+                                    Task 
+
+******************************************************************************************************************
+
+SQL Aliases:-
+
+            SQL aliases are used to give a table, or a column in a table, a temporary name.
+            An alias is created with the AS keyword.
+
+
+
+    MySQL supports the following types of joins:
+
+            1)Inner join
+            2)Left join
+            3)Right join
+            4)Cross join
+
+
+ SQL JOIN:-
+
+            A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+    1)Inner join:-
+                    The INNER JOIN keyword selects records that have matching values in both tables.
+                
+                    SELECT column_name(table1.column_name)
+                    FROM table1
+                    INNER JOIN table2
+                    ON table1.column_name = table2.column_name;
+                    Where Condition
+
+                    short method:-
+                    select *from table1
+                    inner join table2 on table1.column_name=table2.column_name; 
+
+    2)Left join:-
+                The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). 
+
+                    select *from table1
+                    left join table2 on table1.column_name=table2.column_name; 
+
+    3)Right join:-
+                    The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1). 
+
+                    select *from table1
+                    right join table2 on table1.column_name=table2.column_name; 
+
+    4)Full Join:-
+                    The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+                    Tip: FULL OUTER JOIN and FULL JOIN are the same.
+
+                    select *from table1
+                    full outer join table2 on table1.column_name=table2.column_name; 
+
+    5)Cross Join:-
+                    Cross join produces a result set which is the number of rows in the first table multiplied by the number of rows in the second table if no where clause is used along with cross join.This Kind of result is called cartesian product.
+
+
+DISTINCT:-
+
+            In MySQL, the DISTINCT clause is used with the SELECT statement to retrieve the unique records from the result set.
+
+            SELECT DISTINCT column1, column2, ...
+            FROM table_name;
+
+GROUP BY:-
+            The GROUP BY statement groups rows that have the same values into summary rows
+            The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
+            SELECT column_name
+            FROM table_name
+            WHERE condition
+            GROUP BY column_name
+            having column_name;
+
+Sub Query:-
+            A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause.
+
+            Subqueries can be used with the SELECT, INSERT, UPDATE, and DELETE statements along with the operators like =, <, >, >=, <=, IN, BETWEEN, etc.

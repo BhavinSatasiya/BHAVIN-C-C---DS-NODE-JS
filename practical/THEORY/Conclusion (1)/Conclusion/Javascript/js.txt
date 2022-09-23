@@ -1,0 +1,654 @@
+JavaScript:-
+                JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js,fluter, 
+                Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.
+
+                scripting language:-
+                    A scripting language is a programming language that is interpreted. It is translated into machine code when the code is run, rather than beforehand. Scripting languages are often used for short scripts over full computer programs.
+
+        console.log()
+            |    |   
+            |    |
+            |   Function
+            |
+         Object   
+
+        ==     -->check equality
+        ===    -->check equality and datatype
+
+***********************************************Variable******************************************************
+        Variable:-
+                    Variable is an identifier that can store information
+                    
+                    Variable declare using keyword "var" ,"let","const"
+
+
+                            var                                             let
+                var keword introduced in "ES1"                let keyword introduced in "ES6"
+                var keyword allows the duplicate              let keyword wont allows the duplicate
+                variables                                     variables
+                variable hoisting issue raised                we can overcome variable hoisting
+                with var keywors                              with let keyword
+                scope rule break by var keyword               let keyword obeys the scope rule
+                global polluting issue raised                 we can overcome global polluting issue
+                because of var keyword                        by using let keuword
+
+***********************************************String******************************************************
+
+        string : 
+                    "collection of charater"
+
+                using singlequote '' 
+                using doublequote " "
+                using backtick  `  introduced in es6
+                backtick also known as template literal--(IQ)
+                backtick also used in paragraph
+
+                ECMA-262, 6th edition, June 2015 (major changes in 2015)
+                ECMA-262, 7th edition, June 2016
+                ECMA-262, 8th edition, June 2017
+                ECMA-262, 9th edition, June 2018
+                ECMA-262, 10th edition, June 2019
+                ECMA-262, 11th edition, June 2020
+                ECMA-262, 12th edition, June 2021
+
+    numbers:-
+
+            var decimal_num = 100;
+            var hexadecimal_num = 0xFF;
+            var octal_num = 0o377;
+            var binary_num = 011111111;
+            var double_num = 100.12345;
+
+    Check Types:-
+
+            console.log(typeof "Hello");                  //string
+            console.log(typeof 100);                      //number
+            console.log(typeof true);                     //boolean
+            console.log(typeof undefined);                //undefined
+            console.log(typeof null);                     //object
+            console.log(typeof []);                       //object
+            console.log(typeof function () { });          //function
+            console.log(typeof {});                       //object
+            console.log(typeof 100n);                     //bigint
+            console.log(typeof Symbol("Hello"));          //symbol
+
+        var data              //delaration
+        var data  = 100      //initialization
+
+        Data Types:-
+                1)number        
+                  a)Binary
+                  b)Octal              
+                  c)Decimal
+                  d)Hexa Decimal
+                  e)double
+                2)String
+                3)boolean
+                4)Undefined
+                5)Null
+                6)bigint
+                7)Symbol
+
+***********************************************Null nan undefined zero******************************************************
+
+    Diffrence between null, nan, undefined and zero.
+
+
+            NaN              -->anything but not a number
+            null             -->empty
+            undefined        -->variable but has no value
+            0                 -->it self value(0)
+
+            console.log(typeof (null))
+
+            console.log(null == null)
+            console.log(null === null)
+
+            console.log(undefined == undefined)
+            console.log(undefined === undefined)
+
+            console.log(NaN == NaN)
+            console.log(NaN === NaN)
+
+            console.log(null == undefined)
+            console.log(null === undefined)
+
+            console.log(null == NaN)
+            console.log(null === NaN)
+
+            console.log(undefined == NaN)
+            console.log(undefined === NaN)
+
+***********************************************Math Function******************************************************
+The Math object is static.
+
+The syntax for any Math property is : Math.property.
+
+    Math.abs()          -->absolue function (convert in positive value)
+    Math.cbrt()         -->give cube root
+    Math.sqrt()         -->give square root
+    Math.floor(x)       -->Returns x rounded down to its nearest integer        
+    Math.ceil(x)        -->Returns x rounded up to its nearest integer
+    Math.min()  
+    Math.max()
+    Math.pow()
+    Math.round()        -->Returns x rounded to its nearest integer
+    Math.fround()
+    Math.random()
+    Math.trunc(x)       -->Returns the integer part of x (new in ES6)
+    Math.toFixed()
+
+
+***********************************************String Function******************************************************
+
+        .length    //property
+        const a="skill qode the programming lab"
+        console.log(a.length)     //30
+
+1.   at(index +-)  by default 0                              =>character or undefined
+2.   charAt(index)  by default 0                             =>character or empty string    
+3.   indexOf(char or word,position)                          =>index or -1
+4.   lastindexOf(char or word,position)                      =>index or -1
+5    .charCodeAt(index)                                      =>ascii value or NaN
+6.   str1.concat(str2, str3, ... , strN)                     =>murge 2+ string
+7    .endsWith(searchString, length)        cs               =>boolean
+8    .startsWith(searchString, position)      cs             =>boolean
+9.   .includes(searchString, position)           cs          =>boolean
+10.  .match(regexp or char)                                  =>[result of matching] or null
+11.  .search(regexp or char)                                 =>index or -1
+12.  .padEnd(targetLength, padString)
+13.  .padStart(targetLength, padString)
+14.  .repeat(count)                                                  => repeat string
+15.  replace(SearchValue,replaceValue)                               =>replace first occurrence
+16.  .replaceAll(SearchValue,replaceValue)                           =>replace all occurrence
+17.   slice(beginIndex+-, endIndex+-)                                =>a section of string 
+18.  .substr(beginIndex+-, length)              length never nagetive        =>a section of string 
+19.  .substring(StartIndex, EndNumber)     nagetive number and NaN means 0   =>a section of string 
+20.  .split()
+21.  .toLowerCase()
+22.  .toUpperCase()                                                            => converted to upper case.
+23.  .toString()                                                              =>converted array to string or calling object
+24.  trim()                                                                         
+25.  valueOf()
+
+
+***********************************************Array Function,method******************************************************
+
+    array
+    *****
+        -collection of "elements" called as "array"
+                        or
+        -'The Array object, as with arrays in other programming languages, enables storing a collection of multiple items under a single variable name, and has members for performing common array operations.'
+        index starts from "0"
+        []
+
+length:-
+        The length property of an object which is an instance of type Array sets or returns the number of elements in that array.
+
+push():-
+        The push() method adds one or more elements to the end of an array and returns the new length of the array.
+
+pop():-
+        The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+
+unshift():-
+        The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+
+shift():-
+        The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array.
+        
+splice():-
+        The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
+
+slice():-
+        The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array.
+        :-The original array will not be modified.
+
+concat:-
+        The concat() method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+
+spread operator(syntex):-
+        Spread syntax (...) allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected.
+
+immutability:-    
+                let grand = ["5acrs"];
+                let father = [...grand,"5acrs"];
+                let child = [...father,"10acrs"];
+                console.log(child);   
+
+Shallow Copy:-
+                A shallow copy means that certain (sub-)values are still connected to the original variable.
+
+deep clonig/deep copy:-
+                A  deep copy means that all of the values of the new variable are copied and disconnected from the original variable.
+
+findIndex():-
+            The findIndex() method returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, -1 is returned.
+
+filter():-
+         The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+
+reduce():-
+        The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+reduceRight():-
+            The reduceRight() method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
+
+Map:-
+      The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.
+
+flat():-
+     The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+flatmap():-
+             The flatMap() method returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a map() followed by a flat() of depth 1 (arr.map(...args).flat()), but slightly more efficient than calling those two methods separately.
+
+forEach():-
+        The forEach() method executes a provided function once for each array element.
+
+sort():-
+    The sort() method sorts the elements of an array in place and returns the reference to the same array, now sorted. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+    :-ascending / descending
+
+reverse():-
+            used to reverse the array elements
+
+The copyWithin():-
+
+                The copyWithin() method copies the sequence of array elements within the array to the position starting at target. The copy is taken from the index positions of the second and third arguments start and end. The end argument is optional and defaults to the length of the array. This method has the same algorithm as Array.prototype.copyWithin.
+                (insert position, start position, end position)
+
+fill():-
+         The fill() method fills all the elements of a typed array from a start index to an end index with a static value.
+         (insert position, start position, end position)
+
+some():-
+         The some() method tests whether some element in the typed array passes the test implemented by the provided function.
+
+every():-
+        The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+includes():-
+       The includes() method determines whether a typed array includes a certain element, returning true or false as appropriate.
+
+find():-
+        The find() method returns a value of an element in the typed array, if it satisfies the provided testing function. Otherwise undefined is returned.
+
+toString():-
+        The toString() method returns a string representing the specified array and its elements.
+
+**********************************************************Function******************************************************************
+
+    function
+    ********
+
+        "business logic called as function"
+
+        functions are used to reuse the business logic
+        
+        we have following types of functions upto "ES13"
+        
+        1) named functions
+        2) anonymous functions
+        3) rest parameters in functions
+        4) default parameters in functions
+        7) constructor functions
+        6) generators
+        5) optional parameters in functions
+        8) IIFE  (Immidiate Invokable functional Expressions)
+
+1)named function
+****************
+    the function with the particular name called as named function
+    Syntax
+    ++++++
+    1) function definition
+    2) function calling
+
+        function definition
+        +++++++++++++++++++
+        function functionname(arg1,arg2,arg3,arg4,......argn){
+                business logic
+        }
+
+        function calling
+        ++++++++++++++++
+        functionname(param1,param2,param3,param4,.....paramn);
+
+2)anonymous functions
+*********************
+        - the function without name called as anonymous function
+        - anonymous functions also called as "arrow" functions/"lamda" functions/"callback" functions
+        - we will represent arrow functions with "=>"
+        - "=>" introduced in ES6
+Syntax:
+******
+    1) function definition
+    2) function calling
+    function definition
+    *******************
+    var/let/const variablename = (arg1,arg2,arg3,....argn)=>{
+        //business logic
+    }
+    function calling
+    ****************
+    variablename(param1,param2,param3,.....paramn);
+
+                                                                Callback Function
+
+ Callback Function:-"Callback Function is a Function passed into another Function as an arguments, which is then invoked inside the outer function to complete some kind of routine or action".
+
+3)rest parameters in functions
+******************************
+     by using rest parameter, we can hold/store more than one value
+     ES6
+     we will represent rest parameter with "..." operator
+     "..." operator called as spread operator
+     we can have only "one" spread operator per function
+     position of spread operator should be last in occurances
+
+4)default parameters in functions 
+*********************************
+    while defining the functions, we will initilize arguments with default values
+    this concept introduced in ES6
+
+5)constructor functions
+***********************
+
+    collection of variables and functions called as class
+    in javascript we will create classes by using constructor functions
+    in constructor functions all the members should start with "this" keyword
+    we can create object by using new keyword
+
+6)Generators
+************
+    - Generators "controls" the "flow" of execution
+    - Generator functions prefix with "*"
+    - all the statements in functions prefix with "yield" keyword
+    - ES9
+    - Generators returns "cursor" mechanism
+    - through "cursor", we will control "flow" of execution
+
+
+7)optional parameters in functions
+**********************************
+    - while calling the functions, we can make few parameters are optional
+    - ES6
+    - we can represent optional parameters with "?"
+    - optional parameters won't work in "javascript" environment
+    - optional parameters will work in typescript environment
+    - typescript is the programming language
+    - typescript relesed by microsoft
+    - typescript follows the OOPS
+    - extension of typescript files ".ts"
+    - browsers can't understand typescript
+    - so, we need to convert typescript to equalent javascript
+    - conversion from typescript to equalent javascript called as transpilation
+    - "tsc" is the tool, used to perform the transpilation
+    - "tsc" stands for typescript compiler
+    
+8)IIFE
+******
+    Immidiate Invokable Functional Expression
+    ES9
+    when ever we create the functions, automatically it will be invoked
+    Syntax
+    ******
+    ((arg1,arg2,arg3,....argn)=>{
+        business logic
+    })(param1,param3,param3,....paramn);
+
+************************************************************************************************************************************************
+
+Synchronous JavaScript: 
+                        As the name suggests synchronous means to be in a sequence, i.e. every statement of the code gets executed one by one. So, basically a statement has to wait for the earlier statement to get executed.
+
+Asynchronous JavaScript: 
+                        Asynchronous code allows the program to be executed immediately where the synchronous code will block further execution of the remaining code until it finishes the current one. This may not look like a big problem but when you see it in a bigger picture you realize that it may lead to delaying the User Interface.
+
+
+****************************************************************************************************************************************************
+
+Callback hell:-'Because we have to call callbacks inside callbacks, we get a deeply nested dooperation() function, which is much harder to read and dibug. This is something called 'callback function' or 'Pyramid of doom'
+
+********************************************************************************************************************************************************
+
+        Promises
+        ********
+
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+rough:-promise object represent the status of completion or failure of an asyncronous operation and its resulting value.
+
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+
+    - Promises divided into two categories.
+
+    1) Promise Creation
+
+    2) Promise Consumption
+
+    - Producer will create the Promises
+
+    - Consumer will consume the Promises
+
+    "Promise" is the Predefined class, used to create the "Promises"
+
+    we can consume Promises in two ways
+
+    1) then()
+
+    2) async & await keywords
+
+    Promises are alternative solution of Callback hell
+
+new:-
+The new operator lets developers create an instance of a user-defined object type or of one of the built-in object types that has a constructor function.
+
+****************************************then**********************************************************
+
+let promise1 = new Promise((resolve, reject) => {
+  //   resolve("tomarrow we will discuss async & await keyword");
+  reject("cant do that not clear promises");
+});
+console.log(typeof Promise);
+console.log(promise1);
+
+promise1.then(
+  (posRes) => {
+    console.log(posRes);
+  },
+  (errRes) => {
+    console.log(errRes);
+  }
+);
+
+*********************************************Async & Await*************************************************
+
+async-Await:- An async function is a function declared with the async keyword, and the await keyword is permitted within it. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.+
+
+
+****************************************************************OOP in JavaScript*******************************************
+
+Object Oriented Programming in JavaScript:-
+
+“How is Object-Oriented Programming implemented in JavaScript?
+
+There are certain features or mechanisms which makes a Language Object-Oriented like: 
+
+                1)Object
+                2)Classes
+                3)Encapsulation
+                4)Inheritance
+
+1)Object:-
+        An Object is an instance of a class. Objects are everywhere in JavaScript, almost every element is an Object whether it is a function, array, or string. 
+
+        Note: A Method in javascript is a property of an object whose value is a function. 
+
+        Object can be created in two ways in JavaScript: 
+
+        a)Using an Object Literal 
+        b)Using an Object Constructor
+        c)Using Object.create() method: The Object.create() method creates a new object, using an existing object as the prototype of the newly created object. 
+
+        a)//Defining object
+        let person = {
+        first_name:'Mukul',
+        last_name: 'Latiyan',
+        
+        //method
+        getFunction : function(){
+                return (`The name of the person is
+                ${person.first_name} ${person.last_name}`)
+        },
+        //object within object
+        phone_number : {
+                mobile:'12345',
+                landline:'6789'
+        }
+        }
+        console.log(person.getFunction());
+        console.log(person.phone_number.landline);
+
+        b)Using an Object Constructor
+        //using a constructor
+        function person(first_name,last_name){
+        this.first_name = first_name;
+        this.last_name = last_name;
+        }
+        //creating new instances of person object
+        let person1 = new person('Mukul','Latiyan');
+        let person2 = new person('Rahul','Avasthi');
+        
+        console.log(person1.first_name);
+        console.log(`${person2.first_name} ${person2.last_name}`);
+
+        c)// Object.create() example a
+        // simple object with some properties
+        const coder = {
+        isStudying : false,
+        printIntroduction : function(){
+                console.log(`My name is ${this.name}. Am I
+                studying?: ${this.isStudying}.`)
+        }
+        }
+        // Object.create() method
+        const me = Object.create(coder);
+        
+        // "name" is a property set on "me", but not on "coder"
+        me.name = 'Mukul';
+        
+        // Inherited properties can be overwritten
+        me.isStudying = true;
+        
+        me.printIntroduction();
+
+
+2) Classes– 
+        Classes are blueprint of an Object. A class can have many Objects because class is a template while Object are instances of the class or the concrete implementation. 
+        Before we move further into implementation, we should know unlike other Object Oriented Language there are no classes in JavaScript we have only Object. To be more precise, JavaScript is a prototype based Object Oriented Language, which means it doesn’t have classes, rather it defines behaviors using a constructor function and then reuse it using the prototype. 
+
+        Note: Even the classes provided by ECMA2015 are objects.
+
+        Example: 
+        Lets use ES6 classes then we will look at the traditional way of defining an Object and simulate them as classes.
+
+        // Defining class using es6
+        class Vehicle {
+        constructor(name, maker, engine) {
+        this.name = name;
+        this.maker =  maker;
+        this.engine = engine;
+        }
+        getDetails(){
+        return (`The name of the bike is ${this.name}.`)
+        }
+        }
+        // Making object with the help of the constructor
+        let bike1 = new Vehicle('Hayabusa', 'Suzuki', '1340cc');
+        let bike2 = new Vehicle('Ninja', 'Kawasaki', '998cc');
+        
+        console.log(bike1.name);    // Hayabusa
+        console.log(bike2.maker);   // Kawasaki
+        console.log(bike1.getDetails());
+
+        Traditional Way.
+
+        // Defining class in a Traditional Way.
+        function Vehicle(name,maker,engine){
+        this.name = name,
+        this.maker = maker,
+        this.engine = engine
+        };
+        
+        Vehicle.prototype.getDetails = function(){
+        console.log('The name of the bike is '+ this.name);
+        }
+        
+        let bike1 = new Vehicle('Hayabusa','Suzuki','1340cc');
+        let bike2 = new Vehicle('Ninja','Kawasaki','998cc');
+        
+        console.log(bike1.name);
+        console.log(bike2.maker);
+        console.log(bike1.getDetails());
+
+3. Encapsulation(in c++) – 
+                        The process of wrapping properties and functions within a single unit is known as encapsulation. 
+                        Let’s understand encapsulation with an example.
+                        
+                        Encapsulation means information hiding. It’s about hiding as much as possible of the object’s internal parts and exposing a minimal public interface.
+
+                        The simplest and most elegant way to create encapsulation in JavaScript is using closures. A closure can be created as a function with private state
+
+        #include<iostream>
+        using namespace std;
+        class test
+        {
+        int x;
+        public:
+        int get()
+        {
+                return x;
+        }
+        void set(int x1)
+        {
+                this->x=x1;
+        }
+        };
+        int main()
+        {
+        test t1;
+        t1.set(10);
+        cout<<"x:"<<t1.get();
+        }
+
+4. Inheritance – 
+        	It is a concept in which some properties and methods of an Object are being used by another Object. Unlike most of the OOP languages where classes inherit classes, JavaScript Objects inherit Objects i.e. certain features (property and methods) of one object can be reused by other Objects. 
+
+        Let’s understand inheritance with an example: 
+
+        //Inheritance example
+        class person{
+        constructor(name){
+                this.name = name;
+        }
+        //method to return the string
+        toString(){
+                return (`Name of person: ${this.name}`);
+        }
+        }
+        class student extends person{
+        constructor(name,id){
+                //super keyword for calling the above class constructor
+                super(name);
+                this.id = id;
+        }
+        toString(){
+                return (`${super.toString()},Student ID: ${this.id}`);
+        }
+        }
+        let student1 = new student('Mukul',22);
+        console.log(student1.toString());

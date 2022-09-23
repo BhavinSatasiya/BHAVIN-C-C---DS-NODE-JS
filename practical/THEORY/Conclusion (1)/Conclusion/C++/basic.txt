@@ -1,0 +1,160 @@
+*********************What is the difference between C and C++ programming language?********************************
+
+-->As we know both C and C++ are programming languages and used for application development. 
+-->The main difference between both these languages is C is a procedural programming language/structure programming language and does not support classes and objects, 
+    while C++ is a combination of both procedural and object-oriented programming languages.
+--> c++ also called as OOPs
+
+Class:- Class is a user define type or data structure, define with keyword as it's members whose access is 
+        govern by three access specifier Public,Private and protected.
+
+public:-
+        Data members or Member functions which are declared as public can be accessed anywhere in the program (within the same class, or outside of the class).
+
+private:-
+        Data members of Member functions which are declared as private can be accessed within the same class only i.e. the private Data members or Member functions can be accessed within the public member functions of the same class.
+
+protected:-
+        Data members or Member functions which are declared as protected can be accessed in the derived class or within the same class.
+
+Object:-
+        Object is an instance of a class. 
+        All the members of the class can be accessed.
+        Object is a real world entity,
+        object is an entity that has state and behavior. 
+        Here, state means data and behavior means functionality. 
+        Object is a runtime entity, it is created at runtime.
+
+start:-
+
+  iostream(input output stream)
+
+    iostream-->     std-->    Cout,Cin
+                    Inside    Inside 
+                    Library   Library
+
+    <<  -->insertion operator
+    >>  -->Extraction operator
+
+    ex:-   Cin>>   -->Extraction operator
+           Cout<<  -->insertion operator
+
+Constructor:- A Constructor in C++ is a method that is automatically called when object of a class created.
+
+    1.Default Constructor
+    2.Parameterized Constructor
+    3.Copy Constructor
+    4.Static Constructor
+    5.Private Constructor 
+
+    1.Default Constructor:-
+        Default constructor does not take any parameter.
+    
+    2.Parameterized Constructor:-
+        Parameterized Constructor is created by the developer. This constructor takes at least one parameter.
+
+    3.Copy Constructor:- 
+        A copy constructor is a member function which initializes an object using another object of the same class.(copy the object into another object with the help of address)
+
+    4.Static Constructor:-
+        Static constructor is used to initialize static data members as soon as the class is referenced first time.
+
+    5.Private Constructor:-
+        A private constructor is a special instance constructor. It is generally used in classes that contain static members only. If a class has one or more private constructors and no public constructors, 
+        other classes (except nested classes) cannot create instances of this class.
+
+    
+Switch Case Statement:-
+    The switch statement allows us to execute a block of code among many alternatives.
+
+Pass array in Object:-
+
+Syntax:-    classname object_name[]
+
+*********************************************************************************************
+
+Polymorphism:-
+            C++ Polymorphism means that a call to a member function will cause a different function to be executed depending on the type of object  that invokes the function.
+
+
+                                                                 Polymorphism
+                                                                     |
+                                _____________________________________|___________________________________
+                                |                                                                        |                 
+                                |                                                                        |
+                        Compile time                                                                 Run time
+                                |                                                                        |   
+                                |                                                                        |
+             ___________________|_______________________                                        Virtual Function
+            |                                          |     
+            |                                          | 
+            |                                          | 
+     Function Overloading                   Operator Overloading
+
+    Function Overloading:-
+                            Functions can be overload by in number of arguments or change in type of arguments.
+
+    Operator Overloading :-
+                            Operator Overloading is used to overload the most of operator in C++. eg.  +,-  etc...
+
+    Virtual Function:-
+                            A virtual function is a member function which is declared within a base class and is re-defined (Overriden) by a derived class. 
+                            When you refer to a derived class object using a pointer or a reference to the base class, 
+                            you can call a virtual function for that object and execute the derived class’s version of the function.
+
+                            related topic:-abstract (pure virtual function)
+
+
+********************************************************************************************************
+
+Inheritance:-
+
+                In C++, Inheritance is a process which one object aquires all properties and behavior of it's parent object automatically is called as a Inheritance.
+
+                Base class(super class):- The class whole members are inherited is called as base class.
+                Derived class(sub class):- The class which Inherits the member of another class is called derived class.or  
+                                            A Derived class is defined as the class derived from the base class.
+
+                                            The derived class is the specialized class for the base class.
+
+    Types of Inheritance:-1)Single Inheritance
+                          2)Multiple Inheritance
+                          3)Hierarchical Inheritance
+                          4)Multi level Inheritance
+                          5)Hybrid Inheritance
+
+    1)Single Inheritance:-      
+                            Single inheritance is defined as the inheritance in which a derived class is inherited from the only one base   class.
+    
+    2)Multiple Inheritance:-
+                            Multiple inheritance is the process of deriving a new class that inherits the attributes from two or more classes.
+    
+    3)Hierarchical Inheritance:-
+                            Hierarchical inheritance is defined as the process of deriving more than one class from a base class.
+    
+    4)Multi level Inheritance:-
+                            When one class inherits another class which is further inherited by another class, it is known as multi level inheritance in C++. or deriving class form another derived class
+    
+    5)Hybrid Inheritance:-
+                            Hybrid inheritance is a combination of more than one type of inheritance.
+
+************************************************************************************************************
+
+this pointer:-
+        ‘this’ pointer is a constant pointer that holds the memory address of the current object. ‘this’ pointer is not available in static member functions as static member functions can be called without any object (with class name), 
+         For a class X, the type of this pointer is ‘X* const’.
+
+scop Resolution:-
+                used to reference the member function that is out of scope. we use the :: to access the function of program.
+                used to define the function outside class(accessible).(function defination outside class)
+
+Friend Function:-
+                A friend function of a class is defined outside that class' scope but it has the right to access all private and protected members of the class.
+
+getline():-     The C++ getline () is a standard library function that is used to read a string or a line from an input stream.
+
+setprecision:-
+                The setprecision is a manipulator function in C++ which is used to sets the decimal precision of floating-point values on output operations. use #include<iomanip>  library...
+
+******************************************************************************************************************************** 
+

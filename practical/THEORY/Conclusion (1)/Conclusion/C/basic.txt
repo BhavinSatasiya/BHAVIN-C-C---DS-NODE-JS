@@ -1,0 +1,470 @@
+	C language:-
+
+C is a structured programming language. It was initially developed by Dennis Ritchie between 1969 and 1973. It was mainly developed as a system programming language to write operating system
+
+It is a structured programming language that is machine-independent and extensively used to write various applications, Operating Systems like Windows, and many other complex programs like Oracle database, Git, Python interpreter, and more. 
+It is said that ‘c’ is a god’s programming language. One can say, c is a base for the programming.
+
+The main features of the c language include low-level memory access, a simple set of keywords, and a clean style, these features make c language suitable for system programmings like an operating system or compiler development.
+
+***********************************************************************************
+
+# (pound sign/hash)
+    Indicates preprocessor directives/commands
+
+    #includes(directives)
+    Syntax:
+    #include<stdio.h>             Standard input outputs.Header file
+
+stdio.h&conio.h 
+    Header file/Library     
+
+    Header files are TEXT files while library files are BINARY. This means, we can read and modify the header file but not the library! Header file is in C language while the library is in machine language!
+
+stdio.h --> int main()                                                      
+conio.h -->clrscr()                                                         
+
+Int Return type of main function(data type)
+
+main() :-
+    Main function of C language, Excecution start from here
+
+    {   ||Start of main
+
+        scope of Function
+
+    }   ||end of main
+
+return 0; 
+    main function by default return it
+
+    "C program structure"
+    {
+        pre preprocessor directives
+        global declaration
+        statement sequence
+        Function invoking
+    }
+
+Escape sequence:-
+    An Escape sequence in C language is a sequence of characters that dosen't represent itself when used inside String literal or Characters.
+
+    it is composed of two or more Characters starting with backslash \.
+    For example \n represent the new line.
+
+    ;  -->Semi coloumn -->end of the statement
+    t  -->tab  space   -->programming language
+
+
+    %d --> Space holder
+
+
+--------------------------------------------------------------------|
+    data                Type        datatype     Formate Specifier  | 
+                                                                    |    
+12  43  546  43         Number       int                %d          |
+                                                                    |            
+3.14  54.65   43.6      Decimal      Float              %f          |
+                                                                    |    
+d  v  a  g  h  s        alp/lett     Char               %c          |
+                                                                    |
+Surat pen bike          word         String/char        %s          |
+                                                                    |
+---------------------------------------------------------------------
+
+// -->Single line comment
+
+/*
+    Multiple line comment
+*/
+
+Declaration:-
+
+int x;      //Declaration
+int y=20;   //Initialization
+
+Variable:- Variable is an identifier that can store the information.
+
+    Rules:-
+        * A Variable can have alphabets, digit and Underscore.
+        * A variable name can start with alphabat and underscore only.it can't start with digit. 
+        * No white space is allowed within the variable name.
+        * A variable name must not be any reserved word or keyword ex: int,float etc..
+        * Variable name should be meaningful and easy to understand.
+
+    Types of Variable in C:-
+        1.Local Variable
+        2.Global Variable
+        3.Static Variable
+        4.Automatic Variable
+        5.External Variable
+
+printf () and scanf () :-
+
+Printf () and Scanf () are inbuilt library functions in C language that perform formatted input and formatted output functions. These functions are defined and declared in stdio.h header file. 
+The 'f' in printf and scanf stands for 'formatted'.
+
+void main() -->empty
+getch  -->get character
+
+*****************************************************************************************
+
+                                       Operator
+
+Operator:- Operator is a symbol that can tell the compiler to perform all mathematical and arithmetic task.
+
+    ____________________________________________________________________________________________
+    |                                                                                           |
+    |                                Operator                                Type               |
+    |                                                                                           |
+    |                                 +,-,*,/,%                          Arithmetic Operator    |   
+    |                                                                                           |
+    |                                <,<=,>,>=,==,!=                     Relational Operator    |
+    |                                                                                           |    
+    |  Binary Operator                  &&,||,!                          Logical Operator       |
+    |                                                                                           |
+    |                                &,|,<<,>>,~,^                       Bitwise Operator       |
+    |                                                                                           |        
+    |                                =,+=,-+,*=,/=,%=                    Assignment Operator    |
+    |                                                                                           |
+    |                                                                                           |                  ____________________________________________________________________________________________|                                                                                                               
+    |  Unary Operator                    ++,--                           Unary Operator         |
+    |                                                                                           |    
+    |                                                                                           |                                                      ____________________________________________________________________________________________|                                                                                                              
+    |   Ternary Operator                   ?:                            Ternary or             |
+    |                                                                   Conditional Operator    |
+    |___________________________________________________________________________________________|
+
+Binary Operator:- "any Operator required two operand neccessary is called Binary operator"
+
+                  5  -->Quetient
+               _______
+divisior--> 3 |   17    -->dividend
+              |   15
+                __ _ __
+                   2    -->reminder
+
+Modulus:- Modulus gives the reminder
+
+Assignment Operator:-
+
+denoted as "=". This operator assigns the values on the right-hand side of the operand to the left-hand side, 
+An assignment operator requires the value of expressions to be well defined and ensures that variables represent an entity that can be modified.
+
+Logical  Operators:
+------------------------
+or,and,not
+
+			    or	and	 
+	0	0	    0	 0	  	  
+	0	1	    1 	 0	  
+	1	0	    1	 0	  
+	1	1	    1	 1	
+
+  not:- 0->1
+        1->0
+
+Unary Operator:-
+A unary operator is an operator used to operate on a single operand to return a new value.
+
+++,--  -->gives the increment or Decrement by 1
+
+
+Ternary Operator:-
+    ternary operator in C is a type of conditional operator that the programmers use for making various decisions that are nothing but the condition statements which are similar to the if and else statements.
+
+***********************************************************************************************
+
+                                    Conditional statement
+
+
+Conditional Statement:-Sometimes the program needs to be executed depending upon a particular condition. C provides the following statements for implementing the selection control structure.
+
+if statement
+if else statement
+Nested if else
+ladder if else 
+
+if statement:-
+
+syntax:-
+
+if (condition)
+{
+   statement(s);
+}
+
+If the condition is true, statement is executed, otherwise it is skipped. The statement may either be a single or compound statement.
+
+if else statement:-
+
+syntax:-
+
+if (condition)
+   statement1;
+else
+   statement2;
+
+The given condition is evaluated first. If the condition is true, statement1 is executed. If the condition is false, statement2 is executed. It should be kept in mind that statement and statement2 can be single or compound statement.
+
+Nested if:-
+
+syntex:-
+if()
+{
+    if()
+    {
+
+    }
+    else{
+
+    }
+}
+The name indicate, nested else if contains if statement inside an if statement. If we want to check a condition even a condition is hold, then we use nested if.
+
+else if Ladder:-
+
+syntax:-
+if()
+{
+
+}
+else if()
+{
+
+}
+else if()
+{
+
+}
+else{
+
+}
+As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the C else-if ladder is bypassed. 
+If none of the conditions is true, then the final else statement will be executed
+
+ASCII -->American tandard Code for Information interchange
+    "It is a character encoding scheme used for electronics communication."
+ each ascii code occupies 7 bits in memory.
+
+--->A-65  to Z-90
+        
+        diff 32
+
+--->a-97  to z-122
+
+**************************************************************************************************
+
+Loop:-A loop statement allows us to execute a statement or group of statements multiple times
+
+For loop:-
+    syntax:-     for(exp1;exp2;exp3)
+                 {
+                    statement;
+                 }
+
+                 exp1:Initialisation, evaluate only once
+                 exp2:condition, before loop start
+                 exp3:inc/dec, before exit
+
+While loop:-
+    syntax:-    while (condition) {
+                    statements;
+                 }
+
+do-while loop:-
+    syntax:-     do {
+                    statements;
+                 } while (expression);
+
+*************************************************************************************************
+
+goto:- 
+    The goto statement is a jump statement which is sometimes also referred to as unconditional jump statement, 
+    The goto statement can be used to jump from anywhere to anywhere within a function.
+
+**********************************************Array********************************************
+
+Array:-
+
+ -collection of "elements" called as "array"
+                        or
+        -'The Array object, as with arrays in other programming languages, enables storing a collection of multiple items under a single variable name, and has members for performing common array operations.'
+        index starts from "0"
+        []
+
+task:- store value in array
+        3 method:-
+            1)Initialisation
+            2)Input from user
+            3)Asign value for individual
+        
+    1)  int result[5]={10,20,30,40,50};
+        printf("%d",result[2]);
+
+        int result[]={10,20,30,40,50};
+        printf("%d",result[2]);
+
+        int result[5]={10,20};
+        printf("%d",result[3]);    //0
+        10,20,0,0,0  -->it will Automatically take...
+
+    2)#include<stdio.h>
+        int main()
+        {
+            int result[5],i;
+            printf("enter array:-");
+            for(i=0;i<5;i++)
+            {
+                scanf("%d",&result[i]);
+            }
+            for(i=0;i<5;i++)
+            {
+                printf("\t%d",result[i]);
+            }
+        }
+    3)#include<stdio.h>
+        int main()
+        {
+            int result[2]={10};
+            result[1]=20;
+            printf("%d",result[1]);
+        }
+
+************************************************************************************************
+
+String:- collection of Characters
+        denoted by:-" "
+    
+***********************************************************************************
+Function:-
+    "Business Logic called as a function"
+
+    1)In-built Function  -->provide by C language
+    2)Udf (User defined function)
+
+    1)With argu with return
+    2)With argu no return
+    3)no argu with return
+    4)no argu no return
+
+*****************************************************************************
+Pointer:-Pointer store the address
+
+********************************************************************************************
+C Type Conversion:-
+
+    1)Implicit Conversion
+    2)Explicit Conversion (also known as Type Casting)
+
+
+        1)Implicit Conversion:-
+                                The type conversion that is done automatically done by the compiler is known as implicit type conversion. This type of conversion is also known as automatic conversion.
+
+                                                        1)int to char
+                                                        #include<stdio.h>
+                                                        int main()
+                                                        {
+                                                            int x;
+                                                            for(x=65; x<=90; x++){
+                                                                printf("%c  ", x);  /*Implicit casting from int to char %c*/
+                                                            }
+                                                        }
+                                                        2)abobe vise-versa
+                                                        3)#include<stdio.h>
+                                                        int main()
+                                                        {
+                                                            int num=10;
+                                                            double double_num;
+                                                            double_num=num;             //implicit conversion int to float
+                                                            printf("%f",double_num); 
+                                                        }
+                                                        4)above vise-versa
+
+
+
+        2)Explicit Conversion:-
+
+                             When the user manually changes data from one type to another, this is known as explicit conversion. This type of conversion is also known as type casting.
+
+                                                       1)#include<stdio.h>
+                                                        int main()
+                                                        {
+                                                            int x;
+                                                            for(x=65; x<=90; x++){
+                                                            printf("%c ", (char)x); /*Explicit casting from int to char*/
+                                                            }
+                                                        }
+                                                        2)above vise-versa
+                                                        3)#include<stdio.h>
+                                                        int main()
+                                                        {
+                                                            int num=10;
+                                                            printf("%f",(double)num); 
+                                                        }
+                                                        4)abobe vise-versa           
+
+
+********************************************************************
+task:-
+
+1)do addition without + operator
+
+    #include<stdio.h>
+    int main()
+    {
+        int a=50;
+        printf("add:%d",a-(-50));
+    }
+
+2)find out Prime Number
+
+#include<stdio.h>
+int main()
+{
+    int i,number,prime=1;
+    printf("enter number:");
+    scanf("%d",&number);
+    for(i=2;i<number;i++)
+    {
+        if((number%i)==0)
+        {
+            prime=0;
+        }
+    }
+    if(prime==1)
+    {
+        printf("%d is prime number",number);
+    }
+    else
+    {
+        printf("%d is not prime number",number);
+    }
+}
+
+*****************************************************************************
+
+swap 3 number:-
+#include<stdio.h>
+int main()
+{
+    int a=10,b=20,c=30,temp;
+    temp=a;
+    a=b;
+    b=c;
+    c=temp;
+    printf("%d\n%d\n%d\n",a,b,c);
+}
+
+************************************************************************
+mingw install (download)
+apply changes-->select mingw 32 compiler...
+
+path set:- open environment varaibles->C:\MinGW\bin (add this path user) ok..ok..apply changes....
+type in cmd:-
+    filename.c   filename
+    filename
+gcc HELLOW.c -o HELLOW
+HELLOW
+
+*****************************

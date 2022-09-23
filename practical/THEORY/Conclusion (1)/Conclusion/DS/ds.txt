@@ -1,0 +1,158 @@
+Data Structure:-
+                Data Structure can be defined as the group of data elements that provides an efficient way of storing and organizing data in the computer so that it can be used efficiently. Some examples of Data Structures are arrays, Linked List, Stack, Queue, etc.
+
+                Advantages of Data structure:
+
+                *Efficiency
+                *Reusability
+                *Abstraction
+
+                Efficiency:-
+                            The Efficiency of a program depends upon the choice of data structures. For example: suppose, we have some data and we need to perform the search for a particular record. In that case, 
+			  if we organize our data in an array, we will have to search sequentially element by element. hence, 
+			  using an array may not be very efficient here. There are better data structures that can make the search process efficient like an ordered array, binary search tree, or hash tables.
+
+                Reusability:-
+                            Data structures are reusable, i.e. once we have implemented a particular data structure, we can use it at any other place. Implementation of data structures can be compiled into libraries that can be used by different clients.
+
+
+
+    Types of Data Structure:-
+                            1)Primitive Data Structure
+                            2)Non Primitive Data Structure
+
+
+
+    1)Primitive Data Structure:-                                                
+                                These are the structures that are supported at the machine level, they can be used to make non-primitive data structures.
+                                There are two data types:−
+                                                    Built-in Data Type
+                                                    Derived Data Type
+
+
+    2)Non Primitive Data Structure:-
+
+                 The non-primitive data structures cannot be performed without the primitive data structures. Although, they too are provided by the system itself yet they have derived data structures and cannot be formed without using the primitive data structures.
+
+
+                                Types of Non Primitive Data Structure:-
+                                                    Arrays
+                                                    files
+                                                    Linear lists
+                                                    Non-linear lists
+
+
+                    Arrays:-
+                            Arrays are a homogeneous and contiguous collection of the same data types. They have a static memory allocation technique, which means, if memory space is allocated for once, it cannot be changed during runtime.
+
+
+                    files:-
+                            A file is a collection of records. The file data structure is primarily used for managing large amounts of data that are not in the primary storage of the system. The files help us to process, manage, access, 
+                            and retrieve or basically work with such data, easily.
+
+
+                    linear lists:-
+                                  The linear lists are those which have the elements stored in sequential order. The insertions and deletions are easier in the lists.
+
+                       They are divided into two types:
+
+                            Stacks: The stack follows a “LIFO” technique for storing and retrieving elements. The element which is stored at the end will be the first one to be retrieved from the stack. 
+                                    The stack has the following primary functions: Push (): To insert an element in the stack, Pop (): To remove an element from the stack.
+
+                            Queues: The queues follow “FIFO” mechanism for storing and retrieving elements. The elements which are stored first into the queue will only be the first elements to be removed out from the queue.
+                                    The “ENQUEUE” operation is used to insert an element into the queue whereas the “DEQUEUE” operation is used to remove an element from the queue.
+
+                            Double Queue(Double ended queue):-Double Ended Queue is also a Queue data structure in which the insertion and deletion operations are performed at both the ends ( front and rear ).
+                            That means, we can insert at both front and rear positions and can delete from both front and rear positions.
+
+                            Circular Queue:-Circular Queue is a linear data structure in which the operations are performed based on FIFO (First In First Out) principle and the last position is connected back to the first position to make a circle.
+                                            It is also called ‘Ring Buffer’.
+
+
+                    Non-linear lists:-
+                            The non-linear lists do not have elements stored in a certain manner. These are:
+
+                            Graphs: The Graph data structure is used to represent a network. It comprises vertices and edges (to connect the vertices). The graphs are very useful when it comes to studying a network.
+
+                            Trees: Tree data structure comprises of nodes connected in a particular arrangement and they (particularly binary trees) make search operations on the data items easy. 
+                                   The tree data structures consist of a root node which is further divided into various child nodes and so on. The number of levels of the tree is also called height of the tree.
+
+
+Data Structure Operations:-
+
+                            The particular data structure that one chooses for a given situation depends largely on the frequency with which specific operations are performed. The following are the major operations associated with any data structure:
+
+                            Traversing:- 
+                            Every data structure contains the set of data elements. Traversing the data structure means visiting each element of the data structure in order to perform some specific operation like searching or sorting. 
+                            Example: If we need to calculate the average of the marks obtained by a student in 6 different subject, we need to traverse the complete array of marks and calculate the total sum, 
+                            then we will divide that sum by the number of subjects i.e. 6, in order to find the average.
+
+                            Insertion:-
+                            Insertion can be defined as the process of adding the elements to the data structure at any location. If the size of data structure is n then we can only insert n-1 data elements into it.
+
+                            Deletion:-
+                            The process of removing an element from the data structure is called Deletion. We can delete an element from the data structure at any random location. If we try to delete an element from an empty data structure, then underflow occurs.
+
+                            Searching:-                                                                                                         
+                            The process of finding the location of an element within the data structure is called Searching. There are two algorithms to perform searching, Linear Search and Binary Search. We will discuss each one of them later in this tutorial.
+
+                            Sorting:-
+                            The process of arranging the data structure in a specific order is known as Sorting. There are many algorithms that can be used to perform sorting, for example, insertion sort, selection sort, bubble sort, etc.
+
+                            Merging:-
+                             When two lists List A and List B of size M and N respectively, of similar type of elements, clubbed or joined to produce the third list, List C of size (M+N), then this process is called merging.
+
+***********************************************************************************************************
+
+Pointers:-
+        Pointer is a variable that gives the address (location or link or reference) of some other variable. As other variables Pointer also cannot be used before declaration. We can declare the pointer variable as:
+
+        datatype *p;
+
+        This declaration specifies that p is a pointer that will store the address of a variable of a particular data type. ” stands for ‘value of address’. Thus if we declare int *p; then it would mean, the value at the address contained in p is an integer.
+
+*************************************************************************************************
+
+Memory:-
+        Computer memory is any physical device capable of storing information temporarily, like RAM (random access memory), or permanently, like ROM (read-only memory). Memory devices utilize integrated circuits and are used by operating systems, software, and hardware.
+         
+         memory is divided into smaller addressable units called bytes.
+
+
+            Static Memory Allocation:-
+       
+                 In static memory allocation whenever the program executes it fixes the size that the program is going to take, and it can’t be changed further. So, the exact memory requirements must be known before. Allocation and deallocation of memory will be done by the compiler automatically.  When everything is done at compile time (or) before run time, it is called static memory allocation.
+
+                ex:-declared 2 variables. Here the assumption is that int takes 2 bytes and long takes 4 bytes of memory.
+
+            Dynamic memory Allocation:-
+
+                In Dynamic memory allocation size initialization and allocation are done by the programmer. It is managed and served with pointers that point to the newly allocated memory space in an area which we call the heap. Heap memory is unorganized and it is treated as a resource when you require the use of it if not release it.  When everything is done during run time or execution time it is known as Dynamic memory allocation.
+
+                malloc()=memory allocation                       creates a single block of memory space
+                calloc()=contiguous allocation                   assign multiple blocks of memory to a single variable   
+                free()
+                realloc()
+
+                Syntax:
+                        int *p = (int*)malloc(No of values*size(int));
+
+                        ptr=(cast_type)*calloc(n,size)
+                        
+
+**********************************************
+
+rand() :-generate random numbers in the range [0, RAND_MAX). 
+        #include <stdlib.h>
+        ex:-a[i] = rand() % 10;
+
+*******************************************************************************************************
+
+task:-  1)find array position
+        2)array reverse
+        3)array shift
+        4)array merge
+        5)array reverse
+        6)find array min,max value
+        7)array matrix
+        8)transpose

@@ -1,0 +1,95 @@
+CSS:-
+    Cascading Style Sheet,"it is used to style web document.it is used to provide the background color and styling also used to style the font and it's size".
+
+    CSS Box Model:-
+
+                Content:-The content of the box, where text and image is appear
+                Padding:-Clears and area around the content. The padding is transparent.(ex:-set the particular text)
+                Border:-A Border that goes around the padding and content.
+                Margin:-Clears an area outside the Border.The Margin is transparent.(ex:-set the text with whole block)
+
+    syntex:-
+
+        selector    Declaration Declaration
+            h1{color:blue;font-size:12px;}
+                |      |    |       |
+                |      |    |       |
+            Property   |Property    |
+                       |            |
+                     Value        Value
+
+Selector:-
+
+    #id
+    .class
+
+    The only difference between them is that “id” is unique in a page and can only apply to at most one element (target by #), while “class” selector can apply to multiple elements(target by .).
+
+    element selector:-
+        Here, all <p> elements on the page will be center-aligned, with a red text color:
+        p {
+            text-align: center;
+            color: red;
+            }
+
+    Id Selector:-
+        The CSS rule below will be applied to the HTML element with id="para1": 
+
+        #para1 {
+        text-align: center;
+        color: red;
+        }
+
+    Class Selector:-
+        In this example all HTML elements with class="center" will be red and center-aligned: 
+
+        .center {
+        text-align: center;
+        color: red;
+        }
+
+    In this example only <p> elements with class="center" will be red and center-aligned: 
+
+        p.center {
+        text-align: center;
+        color: red;
+        }
+
+    Universal Selector:-
+
+        * {
+            text-align: center;
+            color: blue;
+            }
+
+    Grouping Selector:-
+
+        The grouping selector selects all the HTML elements with the same style definitions.
+
+            Look at the following CSS code (the h1, h2, and p elements have the same style definitions):
+
+            h1 {
+            text-align: center;
+            color: red;
+            }
+
+            h2 {
+            text-align: center;
+            color: red;
+            }
+
+            p {
+            text-align: center;
+            color: red;
+            }
+
+    Methods of CSS:-
+
+        Inline CSS:-
+                        Inline CSS is used to style a specific HTML element. For this CSS style, you’ll only need to add the style attribute to each HTML tag, without using selectors.
+                        
+        Internal CSS:-
+                        Internal or embedded CSS requires you to add <style> tag in the <head> section of your HTML document.
+
+        External CSS:-
+                        With external CSS, you’ll link your web pages to an external .css file, which can be created by any text editor in your device
