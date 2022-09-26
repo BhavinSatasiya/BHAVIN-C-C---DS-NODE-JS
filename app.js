@@ -36,8 +36,10 @@ mongoose.connect(process.env.CONNECTION_URL)
     console.log(err);
 })
 
+const PORT = process.env.PORT||3400
 
-app.listen(process.env.PORT, ()=> console.log(`listening on port ${process.env.PORT}`));
+
+app.listen(process.env.PORT, ()=> console.log(`listening on port ${PORT}`));
 
 // app.get("/",(req,res)=>{
 //     res.send("Hello...!");
