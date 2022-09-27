@@ -29,7 +29,9 @@ app.use('/users',usersRoutes);
 app.use('/orders',ordersRouts);
 
 
-mongoose.connect(process.env.CONNECTION_URL)
+mongoose.connect(process.env.CONNECTION_URL,{
+    dbname:process.env.dbname
+})
 .then(()=>{
     console.log("Detabase connection....")
 }).catch((err)=>{
