@@ -9,7 +9,7 @@ const bodyParser =require("body-parser")
 // const authjwt = require("./helpers/jwt")
 
 //middleware
-app.use(cors());
+app.use(cors());~
 app.use("*",cors())
 
 app.use(bodyParser.json());
